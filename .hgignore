@@ -11,3 +11,4 @@ syntax: regexp
 ^dist/
 ^MANIFEST$
 ^env/
+wtforms/ext/i18n/.*\.mo$
