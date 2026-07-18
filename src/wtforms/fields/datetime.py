@@ -177,6 +177,11 @@ class WeekField(DateField):
     Same as :class:`~wtforms.fields.DateField`, except represents a week,
     stores a :class:`datetime.date` of the monday of the given week, and
     renders as an :mdn-input:`week`.
+
+    .. versionchanged:: 3.3.0
+        Default format is ``%G-W%V`` (ISO 8601 week date) so values match
+        HTML ``type="week"``. The previous ``%Y-W%W`` format rendered
+        invalid ``W00`` weeks for dates before the first Monday of a year.
     """
 
     widget = widgets.WeekInput()
@@ -185,7 +190,7 @@ class WeekField(DateField):
         self,
         label=None,
         validators=None,
-        format="%Y-W%W",
+        format="%G-W%V",
         invalid_value_message=None,
         **kwargs,
     ):

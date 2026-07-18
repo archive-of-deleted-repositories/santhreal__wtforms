@@ -5,6 +5,9 @@ Version 3.3.0b4
 
 Unreleased
 
+- :class:`~fields.WeekField` defaults to ``%G-W%V`` so rendered values match
+  HTML ``type="week"`` ISO week dates (avoids invalid ``W00`` for early
+  January).
 - :class:`~datalist.DataList` ``choices`` accepts the shorthand
   ``{value: label}`` dict syntax. :issue:`886`
 - ``choices`` callables on fields nested in a :class:`~fields.FieldList` are
